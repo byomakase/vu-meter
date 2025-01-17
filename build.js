@@ -52,9 +52,9 @@ async function buildMain() {
   };
   const version = process.env.npm_package_version;
   const iifeOutput = {
-    file: `./docs/web-audio-peak-meter-${version}.min.js`,
+    file: `./docs/vu-meter-${version}.min.js`,
     format: 'iife',
-    name: 'webAudioPeakMeter',
+    name: 'vuMeter',
     exports: 'named',
     sourcemap: true,
   };
@@ -99,7 +99,7 @@ function docHtml(content, markup, js) {
 <head>
   <meta charset="UTF-8">
   <title>${title}</title>
-  <link href="/web-audio-peak-meter/docs.css" rel="stylesheet">
+  <link href="/vu-meter/docs.css" rel="stylesheet">
 </head>
 <body>
 ${content}
@@ -115,7 +115,7 @@ ${
   js
     ? `<h2>Javascript code</h2>
 <pre class="code-block"><code>${escapeHtml(js)}</code></pre>
-<script src="/web-audio-peak-meter/web-audio-peak-meter-${version}.min.js"></script>
+<script src="/vu-meter/vu-meter-${version}.min.js"></script>
 <script>
 ${js}
 </script>`
@@ -162,12 +162,12 @@ async function localDev() {
   const port = process.env.PORT || 6080;
   const serve = serveStatic('./docs');
   const server = http.createServer((req, res) => {
-    if (req.url.length < '/web-audio-peak-meter'.length) {
+    if (req.url.length < '/vu-meter'.length) {
       res.writeHead(404, { 'Content-Type': 'text/html' });
       res.end('404: File not found');
       return;
     }
-    req.url = req.url.slice('/web-audio-peak-meter'.length);
+    req.url = req.url.slice('/vu-meter'.length);
     const done = finalhandler(req, res);
     serve(req, res, done);
   });

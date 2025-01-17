@@ -1,6 +1,6 @@
 {
-  "name": "web-audio-peak-meter",
-  "version": "3.1.0",
+  "name": "@byomakase/vu-meter",
+  "version": "1.0.0",
   "description": "A customizable peak meter using the web audio API",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -12,7 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/esonderegger/web-audio-peak-meter.git"
+    "url": "https://github.com/byomakase/vu-meter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/byomakase/vu-meter/issues"
   },
   "keywords": [
     "web",
@@ -22,11 +25,15 @@
     "ppm"
   ],
   "author": "Evan Sonderegger",
+  "contributors": [
+    {
+      "name" :  "byOmakase",
+      "email": "info@byomakase.org",
+      "url": "https://player.byomakase.org"
+    }
+  ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/esonderegger/web-audio-peak-meter/issues"
-  },
-  "homepage": "https://github.com/esonderegger/web-audio-peak-meter#readme",
+  "homepage": "https://player.byomakase.org",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/jest": "^29.5.0",
