@@ -31,15 +31,15 @@ sourceNodeOne.connect(audioCtx.destination);
 sourceNodeTwo.connect(audioCtx.destination);
 
 const elementOneA = document.getElementById('meter-one-a');
-const meterOneA = new webAudioPeakMeter.WebAudioPeakMeter(sourceNodeOne, elementOneA);
+const meterOneA = new vuMeter.WebAudioPeakMeter(sourceNodeOne, elementOneA);
 const elementOneB = document.getElementById('meter-one-b');
 const optionsOneB = {
   backgroundColor: '#555',
   peakHoldDuration: 2000,
 };
-const meterOneB = new webAudioPeakMeter.WebAudioPeakMeter(sourceNodeOne, elementOneB, optionsOneB);
+const meterOneB = new vuMeter.WebAudioPeakMeter(sourceNodeOne, elementOneB, optionsOneB);
 const elementTwoA = document.getElementById('meter-two-a');
 const optionsTwoA = {
   vertical: true,
 };
-const meterTwoA = new webAudioPeakMeter.WebAudioPeakMeter(sourceNodeTwo, elementTwoA, optionsTwoA);
+const meterTwoA = new vuMeter.WebAudioPeakMeter(sourceNodeTwo, elementTwoA, optionsTwoA);

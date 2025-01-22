@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Video Demo</title>
-  <link href="/web-audio-peak-meter/docs.css" rel="stylesheet">
+  <link href="/vu-meter/docs.css" rel="stylesheet">
 </head>
 <body>
 <h1 id="video-demo">Video Demo</h1>
@@ -56,9 +56,9 @@ const videoElement = document.getElementById(&#039;the-video&#039;);
 const meterElement = document.getElementById(&#039;peak-meter&#039;);
 const sourceNode = audioCtx.createMediaElementSource(videoElement);
 sourceNode.connect(audioCtx.destination);
-const test = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+const test = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);
 </code></pre>
-<script src="/web-audio-peak-meter/web-audio-peak-meter-3.1.0.min.js"></script>
+<script src="/vu-meter/vu-meter-1.0.0.min.js"></script>
 <script>
 const audioCtx = new AudioContext();
 
@@ -88,7 +88,7 @@ const videoElement = document.getElementById('the-video');
 const meterElement = document.getElementById('peak-meter');
 const sourceNode = audioCtx.createMediaElementSource(videoElement);
 sourceNode.connect(audioCtx.destination);
-const test = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+const test = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);
 
 </script>
 </body>

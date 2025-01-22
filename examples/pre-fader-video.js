@@ -31,7 +31,7 @@ gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
 sourceNode.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
-const unused = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+const unused = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);
 
 const gainSlider = document.getElementById('gain');
 gainSlider.addEventListener('change', (evt) => {

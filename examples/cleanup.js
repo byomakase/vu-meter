@@ -36,7 +36,7 @@ meterToggle.addEventListener('click', () => {
     meterInstance = null;
     meterToggle.innerText = 'Create meter';
   } else {
-    meterInstance = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+    meterInstance = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);
     meterToggle.innerText = 'Delete meter';
   }
 });

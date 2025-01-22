@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Web Audio Peak Meters</title>
+  <title>VU Meter</title>
   <link href="/vu-meter/docs.css" rel="stylesheet">
 </head>
 <body>
-<h1 id="web-audio-peak-meters">Web Audio Peak Meters</h1>
+<h1 id="vu-meter">VU Meter</h1>
 <p>Customizable peak meters, using the web audio API. It can measure peak or true peak based on <a href="https://www.itu.int/rec/R-REC-BS.1770">ITU-R BS.1770</a></p>
 <h2 id="examples">Examples</h2>
 <ul>
@@ -32,7 +32,7 @@
   const audioCtx = new window.AudioContext();
   const sourceNode = audioCtx.createMediaElementSource(myAudio);
   sourceNode.connect(audioCtx.destination);
-  const myMeter = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, myMeterElement);
+  const myMeter = new vuMeter.WebAudioPeakMeter(sourceNode, myMeterElement);
   myAudio.addEventListener(&#39;play&#39;, function () {
     audioCtx.resume();
   });

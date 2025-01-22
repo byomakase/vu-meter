@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Usage without a DOM node</title>
-  <link href="/web-audio-peak-meter/docs.css" rel="stylesheet">
+  <link href="/vu-meter/docs.css" rel="stylesheet">
 </head>
 <body>
 <h1 id="usage-without-a-dom-node">Usage without a DOM node</h1>
@@ -85,7 +85,7 @@ buttonElement.addEventListener(&#039;click&#039;, () =&gt; {
   }
 });
 
-const meterInstance = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode);
+const meterInstance = new vuMeter.WebAudioPeakMeter(sourceNode);
 
 clearPeaks.addEventListener(&#039;click&#039;, () =&gt; {
   meterInstance.clearPeaks();
@@ -101,7 +101,7 @@ getPeaks.addEventListener(&#039;click&#039;, () =&gt; {
   maxesDB.innerText = displayFloatArray(peaks.maxesDB);
 });
 </code></pre>
-<script src="/web-audio-peak-meter/web-audio-peak-meter-3.1.0.min.js"></script>
+<script src="/vu-meter/vu-meter-1.0.0.min.js"></script>
 <script>
 const audioCtx = new AudioContext();
 const audioElement = document.getElementById('the-audio');
@@ -137,7 +137,7 @@ buttonElement.addEventListener('click', () => {
   }
 });
 
-const meterInstance = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode);
+const meterInstance = new vuMeter.WebAudioPeakMeter(sourceNode);
 
 clearPeaks.addEventListener('click', () => {
   meterInstance.clearPeaks();

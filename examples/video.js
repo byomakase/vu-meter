@@ -26,4 +26,4 @@ const videoElement = document.getElementById('the-video');
 const meterElement = document.getElementById('peak-meter');
 const sourceNode = audioCtx.createMediaElementSource(videoElement);
 sourceNode.connect(audioCtx.destination);
-const test = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+const test = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);

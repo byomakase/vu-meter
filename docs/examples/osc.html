@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>A simple oscillator node</title>
-  <link href="/web-audio-peak-meter/docs.css" rel="stylesheet">
+  <link href="/vu-meter/docs.css" rel="stylesheet">
 </head>
 <body>
 <h1 id="a-simple-oscillator-node">A simple oscillator node</h1>
@@ -74,9 +74,9 @@ panNode.connect(audioCtx.destination);
 oscillatorNode.start();
 
 const meterElement1 = document.getElementById(&#039;peak-meter-1&#039;);
-const meter1 = new webAudioPeakMeter.WebAudioPeakMeter(gainNode, meterElement1);
+const meter1 = new vuMeter.WebAudioPeakMeter(gainNode, meterElement1);
 const meterElement2 = document.getElementById(&#039;peak-meter-2&#039;);
-const meter2 = new webAudioPeakMeter.WebAudioPeakMeter(panNode, meterElement2);
+const meter2 = new vuMeter.WebAudioPeakMeter(panNode, meterElement2);
 
 const gainSlider = document.getElementById(&#039;gain&#039;);
 gainSlider.addEventListener(&#039;change&#039;, (evt) =&gt; {
@@ -88,7 +88,7 @@ panningSlider.addEventListener(&#039;change&#039;, (evt) =&gt; {
   panNode.pan.setValueAtTime(evt.target.value, audioCtx.currentTime);
 });
 </code></pre>
-<script src="/web-audio-peak-meter/web-audio-peak-meter-3.1.0.min.js"></script>
+<script src="/vu-meter/vu-meter-1.0.0.min.js"></script>
 <script>
 const audioCtx = new AudioContext();
 
@@ -128,9 +128,9 @@ panNode.connect(audioCtx.destination);
 oscillatorNode.start();
 
 const meterElement1 = document.getElementById('peak-meter-1');
-const meter1 = new webAudioPeakMeter.WebAudioPeakMeter(gainNode, meterElement1);
+const meter1 = new vuMeter.WebAudioPeakMeter(gainNode, meterElement1);
 const meterElement2 = document.getElementById('peak-meter-2');
-const meter2 = new webAudioPeakMeter.WebAudioPeakMeter(panNode, meterElement2);
+const meter2 = new vuMeter.WebAudioPeakMeter(panNode, meterElement2);
 
 const gainSlider = document.getElementById('gain');
 gainSlider.addEventListener('change', (evt) => {

@@ -36,9 +36,9 @@ panNode.connect(audioCtx.destination);
 oscillatorNode.start();
 
 const meterElement1 = document.getElementById('peak-meter-1');
-const meter1 = new webAudioPeakMeter.WebAudioPeakMeter(gainNode, meterElement1);
+const meter1 = new vuMeter.WebAudioPeakMeter(gainNode, meterElement1);
 const meterElement2 = document.getElementById('peak-meter-2');
-const meter2 = new webAudioPeakMeter.WebAudioPeakMeter(panNode, meterElement2);
+const meter2 = new vuMeter.WebAudioPeakMeter(panNode, meterElement2);
 
 const gainSlider = document.getElementById('gain');
 gainSlider.addEventListener('change', (evt) => {

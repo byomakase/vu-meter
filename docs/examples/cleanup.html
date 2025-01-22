@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Dynamic creation and cleanup</title>
-  <link href="/web-audio-peak-meter/docs.css" rel="stylesheet">
+  <link href="/vu-meter/docs.css" rel="stylesheet">
 </head>
 <body>
 <h1 id="dynamic-creation-and-cleanup">Dynamic creation and cleanup</h1>
@@ -76,12 +76,12 @@ meterToggle.addEventListener(&#039;click&#039;, () =&gt; {
     meterInstance = null;
     meterToggle.innerText = &#039;Create meter&#039;;
   } else {
-    meterInstance = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+    meterInstance = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);
     meterToggle.innerText = &#039;Delete meter&#039;;
   }
 });
 </code></pre>
-<script src="/web-audio-peak-meter/web-audio-peak-meter-3.1.0.min.js"></script>
+<script src="/vu-meter/vu-meter-1.0.0.min.js"></script>
 <script>
 const audioCtx = new AudioContext();
 const audioElement = document.getElementById('the-audio');
@@ -121,7 +121,7 @@ meterToggle.addEventListener('click', () => {
     meterInstance = null;
     meterToggle.innerText = 'Create meter';
   } else {
-    meterInstance = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+    meterInstance = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);
     meterToggle.innerText = 'Delete meter';
   }
 });

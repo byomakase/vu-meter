@@ -32,7 +32,7 @@ Then, at the bottom of your `<body>` tag, add the script tag for these meters. I
   const audioCtx = new window.AudioContext();
   const sourceNode = audioCtx.createMediaElementSource(myAudio);
   sourceNode.connect(audioCtx.destination);
-  const myMeter = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, myMeterElement);
+  const myMeter = new vuMeter.WebAudioPeakMeter(sourceNode, myMeterElement);
   myAudio.addEventListener('play', function () {
     audioCtx.resume();
   });

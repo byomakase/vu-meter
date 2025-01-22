@@ -32,7 +32,7 @@ buttonElement.addEventListener('click', () => {
   }
 });
 
-const meterInstance = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode);
+const meterInstance = new vuMeter.WebAudioPeakMeter(sourceNode);
 
 clearPeaks.addEventListener('click', () => {
   meterInstance.clearPeaks();

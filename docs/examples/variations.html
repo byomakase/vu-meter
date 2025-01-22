@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Multiple variations using options</title>
-  <link href="/web-audio-peak-meter/docs.css" rel="stylesheet">
+  <link href="/vu-meter/docs.css" rel="stylesheet">
 </head>
 <body>
 <h1 id="multiple-variations-using-options">Multiple variations using options</h1>
@@ -81,20 +81,20 @@ sourceNodeOne.connect(audioCtx.destination);
 sourceNodeTwo.connect(audioCtx.destination);
 
 const elementOneA = document.getElementById(&#039;meter-one-a&#039;);
-const meterOneA = new webAudioPeakMeter.WebAudioPeakMeter(sourceNodeOne, elementOneA);
+const meterOneA = new vuMeter.WebAudioPeakMeter(sourceNodeOne, elementOneA);
 const elementOneB = document.getElementById(&#039;meter-one-b&#039;);
 const optionsOneB = {
   backgroundColor: &#039;#555&#039;,
   peakHoldDuration: 2000,
 };
-const meterOneB = new webAudioPeakMeter.WebAudioPeakMeter(sourceNodeOne, elementOneB, optionsOneB);
+const meterOneB = new vuMeter.WebAudioPeakMeter(sourceNodeOne, elementOneB, optionsOneB);
 const elementTwoA = document.getElementById(&#039;meter-two-a&#039;);
 const optionsTwoA = {
   vertical: true,
 };
-const meterTwoA = new webAudioPeakMeter.WebAudioPeakMeter(sourceNodeTwo, elementTwoA, optionsTwoA);
+const meterTwoA = new vuMeter.WebAudioPeakMeter(sourceNodeTwo, elementTwoA, optionsTwoA);
 </code></pre>
-<script src="/web-audio-peak-meter/web-audio-peak-meter-3.1.0.min.js"></script>
+<script src="/vu-meter/vu-meter-1.0.0.min.js"></script>
 <script>
 const audioCtx = new AudioContext();
 
@@ -129,18 +129,18 @@ sourceNodeOne.connect(audioCtx.destination);
 sourceNodeTwo.connect(audioCtx.destination);
 
 const elementOneA = document.getElementById('meter-one-a');
-const meterOneA = new webAudioPeakMeter.WebAudioPeakMeter(sourceNodeOne, elementOneA);
+const meterOneA = new vuMeter.WebAudioPeakMeter(sourceNodeOne, elementOneA);
 const elementOneB = document.getElementById('meter-one-b');
 const optionsOneB = {
   backgroundColor: '#555',
   peakHoldDuration: 2000,
 };
-const meterOneB = new webAudioPeakMeter.WebAudioPeakMeter(sourceNodeOne, elementOneB, optionsOneB);
+const meterOneB = new vuMeter.WebAudioPeakMeter(sourceNodeOne, elementOneB, optionsOneB);
 const elementTwoA = document.getElementById('meter-two-a');
 const optionsTwoA = {
   vertical: true,
 };
-const meterTwoA = new webAudioPeakMeter.WebAudioPeakMeter(sourceNodeTwo, elementTwoA, optionsTwoA);
+const meterTwoA = new vuMeter.WebAudioPeakMeter(sourceNodeTwo, elementTwoA, optionsTwoA);
 
 </script>
 </body>

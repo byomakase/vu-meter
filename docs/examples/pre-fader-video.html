@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Pre-Fade Metering with Video Element</title>
-  <link href="/web-audio-peak-meter/docs.css" rel="stylesheet">
+  <link href="/vu-meter/docs.css" rel="stylesheet">
 </head>
 <body>
 <h1 id="pre-fade-metering-with-video-element">Pre-Fade Metering with Video Element</h1>
@@ -69,14 +69,14 @@ gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
 sourceNode.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
-const unused = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+const unused = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);
 
 const gainSlider = document.getElementById(&#039;gain&#039;);
 gainSlider.addEventListener(&#039;change&#039;, (evt) =&gt; {
   gainNode.gain.setValueAtTime(evt.target.value, audioCtx.currentTime);
 });
 </code></pre>
-<script src="/web-audio-peak-meter/web-audio-peak-meter-3.1.0.min.js"></script>
+<script src="/vu-meter/vu-meter-1.0.0.min.js"></script>
 <script>
 const audioCtx = new AudioContext();
 
@@ -111,7 +111,7 @@ gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
 sourceNode.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
-const unused = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+const unused = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);
 
 const gainSlider = document.getElementById('gain');
 gainSlider.addEventListener('change', (evt) => {

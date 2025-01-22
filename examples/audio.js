@@ -27,4 +27,4 @@ buttonElement.addEventListener('click', () => {
   }
 });
 
-const test = new webAudioPeakMeter.WebAudioPeakMeter(sourceNode, meterElement);
+const test = new vuMeter.WebAudioPeakMeter(sourceNode, meterElement);
