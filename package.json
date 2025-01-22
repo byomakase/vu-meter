@@ -1,6 +1,6 @@
 {
   "name": "@byomakase/vu-meter",
-  "version": "1.0.0",
+  "version": "1.0.0-SNAPSHOT",
   "description": "A customizable peak meter using the web audio API",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "test": "jest",
     "build": "node build.js",
-    "start": "node build.js dev"
+    "start": "node build.js dev",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",

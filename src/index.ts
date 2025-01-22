@@ -98,7 +98,7 @@ export class WebAudioPeakMeter {
   }
 
   paintMeter() {
-    const { dbRangeMin, dbRangeMax, vertical } = this.config;
+    const { dbRangeMin, dbRangeMax, vertical, scale, scaleOffset } = this.config;
     if (this.bars) {
       this.bars.forEach((barDiv, i) => {
         const tempPeak = dbFromFloat(this.tempPeaks[i]);
@@ -111,7 +111,9 @@ export class WebAudioPeakMeter {
         if (this.heldPeaks[i] === 0.0) {
           textLabel.textContent = '-∞';
         } else {
-          const heldPeak = dbFromFloat(this.heldPeaks[i]);
+          const nordic = scale === 'nordic'
+          const scaleOffsetValue = nordic ? 9 : scaleOffset
+          const heldPeak = dbFromFloat(this.heldPeaks[i]) + scaleOffsetValue;
           textLabel.textContent = heldPeak.toFixed(1);
         }
       });

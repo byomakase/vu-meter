@@ -12,6 +12,8 @@ export interface PeakMeterConfig {
   maskTransition: string,
   audioMeterStandard: string,
   peakHoldDuration: number,
+  scale: string,
+  scaleOffset: number
 };
 
 export const defaultConfig: PeakMeterConfig = {
@@ -28,4 +30,6 @@ export const defaultConfig: PeakMeterConfig = {
   maskTransition: '0.1s',
   audioMeterStandard: 'peak-sample',
   peakHoldDuration: 0,
+  scale: 'default',
+  scaleOffset: 0
 };
