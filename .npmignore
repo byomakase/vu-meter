@@ -1,6 +1,12 @@
 docs/
+examples/
 src/*.test.ts
+.idea/
 .eslintrc.json
 .gitignore
 .npmignore
+.prettierignore
+.prettierrc.json
 rollup.config.js
+jest.config.js
+tsconfig.json

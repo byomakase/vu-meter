@@ -154,7 +154,7 @@ async function buildAll() {
   await buildWorklet('peak-sample');
   await buildWorklet('true-peak');
   await buildMain();
-  await buildDocs();
+  // await buildDocs();
 }
 
 async function localDev() {
