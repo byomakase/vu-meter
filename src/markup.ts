@@ -1,17 +1,12 @@
-import { PeakMeterConfig } from './config';
-import { dbFromFloat, dbTicks } from './utils';
+import {PeakMeterConfig} from './config';
+import {dbFromFloat, dbTicks} from './utils';
 
 const horizontalLabelWidth = 3;
 const verticalLabelHeight = 1.5;
 const horizontalTickHeight = 1.5;
 const verticalTickWidth = 2;
 
-export function audioClipPath(
-  db: number,
-  dbRangeMin: number,
-  dbRangeMax: number,
-  vertical: boolean
-): string {
+export function audioClipPath(db: number, dbRangeMin: number, dbRangeMax: number, vertical: boolean): string {
   let clipPercent = Math.floor(((dbRangeMax - db) * 100) / (dbRangeMax - dbRangeMin));
   if (clipPercent > 100) {
     clipPercent = 100;
@@ -26,7 +21,7 @@ export function audioClipPath(
 }
 
 export function createContainerDiv(parent: HTMLElement, config: PeakMeterConfig): HTMLElement {
-  const { backgroundColor, borderSize, vertical } = config;
+  const {backgroundColor, borderSize, vertical} = config;
   const meterElement = document.createElement('div');
   meterElement.style.backgroundColor = backgroundColor;
   meterElement.style.boxSizing = 'border-box';
@@ -41,12 +36,11 @@ export function createContainerDiv(parent: HTMLElement, config: PeakMeterConfig)
 }
 
 export function createTicks(parent: HTMLElement, config: PeakMeterConfig): Array<HTMLElement> {
-  const { dbRangeMin, dbRangeMax, dbTickSize, fontSize, borderSize, tickColor, vertical, scale, scaleOffset } = config;
+  const {dbRangeMin, dbRangeMax, dbTickSize, fontSize, borderSize, tickColor, vertical, scale, scaleOffset} = config;
   const ticks = dbTicks(dbRangeMin, dbRangeMax, dbTickSize);
   const ticksDiv = document.createElement('div');
   ticksDiv.style.position = 'relative';
-  const nordic = scale === 'nordic'
-  const scaleOffsetValue = nordic ? 9 : scaleOffset
+  const nordic = scale === 'nordic';
   if (vertical) {
     ticksDiv.style.height = `calc(100% - ${fontSize * verticalLabelHeight}px)`;
     ticksDiv.style.width = nordic ? `${fontSize * 3}px` : `${fontSize * verticalTickWidth}px`;
@@ -61,9 +55,9 @@ export function createTicks(parent: HTMLElement, config: PeakMeterConfig): Array
     const tickDiv = document.createElement('div');
     ticksDiv.appendChild(tickDiv);
     tickDiv.style.position = 'absolute';
-    tickDiv.style.color = nordic && (t+scaleOffsetValue) >= 6 ? 'red' : tickColor;
+    tickDiv.style.color = nordic && t + scaleOffset! >= 6 ? 'red' : tickColor;
     tickDiv.style.fontSize = `${fontSize}px`;
-    tickDiv.textContent = nordic && t === -9 ? 'TEST' : (t+scaleOffsetValue).toString();
+    tickDiv.textContent = nordic && t === -9 ? 'TEST' : (t + scaleOffset!).toString();
     const percentInRange = ((dbRangeMax - t) / (dbRangeMax - dbRangeMin)) * 100;
     if (vertical) {
       tickDiv.style.top = `calc(${percentInRange}% - ${fontSize / 2}px)`;
@@ -78,12 +72,8 @@ export function createTicks(parent: HTMLElement, config: PeakMeterConfig): Array
   return tickDivs;
 }
 
-export function createChannelElements(
-  parent: HTMLElement,
-  config: PeakMeterConfig,
-  channelCount: number
-): Array<HTMLElement> {
-  const { fontSize, vertical, borderSize } = config;
+export function createChannelElements(parent: HTMLElement, config: PeakMeterConfig, channelCount: number): Array<HTMLElement> {
+  const {fontSize, vertical, borderSize} = config;
   const outerDiv = document.createElement('div');
   outerDiv.style.display = 'flex';
   outerDiv.style.justifyContent = 'space-between';
@@ -114,11 +104,8 @@ export function createChannelElements(
   return channelDivs;
 }
 
-export function createPeakLabels(
-  parents: HTMLElement[],
-  config: PeakMeterConfig
-): Array<HTMLElement> {
-  const { labelColor, fontSize, vertical } = config;
+export function createPeakLabels(parents: HTMLElement[], config: PeakMeterConfig): Array<HTMLElement> {
+  const {labelColor, fontSize, vertical} = config;
   const labelDivs = parents.map((parent) => {
     const label = document.createElement('div');
     // label.style.textAlign = 'center';
@@ -144,7 +131,7 @@ export function createPeakLabels(
 }
 
 export function createBars(parents: HTMLElement[], config: PeakMeterConfig): Array<HTMLElement> {
-  const { gradient, vertical, fontSize, maskTransition } = config;
+  const {gradient, vertical, fontSize, maskTransition} = config;
   // const initialClipPath = audioClipPath(dbRange, dbRange, vertical);
   const barDivs = parents.map((parent) => {
     const barDiv = document.createElement('div');

@@ -1,0 +1,70 @@
+<!--
+  ~ Copyright 2024 ByOmakase, LLC (https://byomakase.org)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!doctype html>
+<html>
+<head>
+  <title>Omakase Player</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!--  omakase player styles -->
+  <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@byomakase/omakase-player@latest/dist/style.css" />-->
+  <link rel="stylesheet" href="http://127.0.0.1:8080/style.css" />
+
+  <!--  hls.js-->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <!--  omakase player -->
+  <!--  <script src="https://cdn.jsdelivr.net/npm/@byomakase/omakase-player@latest/dist/omakase-player.umd.min.js"></script>-->
+  <script src="http://127.0.0.1:8080/omakase-player.umd.js"></script>
+
+
+  <!-- CSS only -->
+
+  <style>
+      html,
+      body {
+          margin: 0;
+          padding: 0;
+          background-color: #ffffff;
+      }
+
+      #omakase-player {
+          width: 400px;
+          height: 400px;
+      }
+
+      #vu-meter1, #vu-meter2, #vu-meter3 {
+          width: 400px;
+          height: 200px;
+      }
+  </style>
+
+  <script src="index.js" type="module"></script>
+
+</head>
+<body>
+
+<div id="omakase-player"></div>
+
+<div style="display: flex; flex-direction: row">
+  <div id="vu-meter1"></div>
+  <div id="vu-meter2"></div>
+  <div id="vu-meter3"></div>
+</div>
+
+</body>
+</html>

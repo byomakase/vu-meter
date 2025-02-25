@@ -1,5 +1,5 @@
-import { calculateLPFCoefficients, filterSample, truePeakValues } from './true-peak';
-import { testSignalGenerator, dbFromFloat } from './utils';
+import {calculateLPFCoefficients, filterSample, truePeakValues} from './true-peak';
+import {dbFromFloat, testSignalGenerator} from '../utils';
 
 describe('calculateLPFCoefficients functionality', () => {
   it('returns an array of the specified size (even)', () => {
@@ -18,8 +18,8 @@ describe('filterSample functionality', () => {
   it('returns an array the size of the upsample factor', () => {
     const upsampleFactor = 4;
     const coefficients = calculateLPFCoefficients(8, upsampleFactor);
-    const lpfBuffer = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8];
-    const samples  = filterSample(lpfBuffer, coefficients, upsampleFactor);
+    const lpfBuffer = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8];
+    const samples = filterSample(lpfBuffer, coefficients, upsampleFactor);
     expect(Array.isArray(samples)).toBe(true);
     expect(samples).toHaveLength(upsampleFactor);
   });

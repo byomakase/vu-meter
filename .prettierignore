@@ -1,3 +1,5 @@
 node_modules
 docs
 lib
+dist
+README.md
