@@ -27,11 +27,11 @@ VU Meter is using data provided by Omakase Player's peak processor. Peak process
 
 ### Main audio
 
-VU Meter DOM node is created by providing number of channels and VU Meter DOM container. Then, attach event source by providing Omakase Player audio peak processor in `attachSource` method. Peak processor is a stream of `AudioPeakProcessorMessageEvent` objects used by VU Meter for peaks visualization.
+VU Meter DOM node is created by providing number of channels and VU Meter DOM container (VU meter DOM node will stretch inside container DOM). Then, attach event source by providing Omakase Player audio peak processor in `attachSource` method. Peak processor is a stream of `AudioPeakProcessorMessageEvent` objects used by VU Meter for peaks visualization.
 
 ```html
 
-<div id="vu-meter"></div>
+<div id="vu-meter" style="width: 300px; height: 300px"></div>
 ```
 
 ```javascript
@@ -59,7 +59,7 @@ omp.loadVideo('https://demo.player.byomakase.org/data/sdr-ts/meridian_sdr.m3u8',
 
 ```html
 
-<div id="vu-meter"></div>
+<div id="vu-meter" style="width: 300px; height: 300px"></div>
 ```
 
 ```javascript
@@ -98,7 +98,7 @@ Peak processor stream on single VU Meter instance can be changed on the fly. For
 
 ```html
 
-<div id="vu-meter"></div>
+<div id="vu-meter" style="width: 300px; height: 300px"></div>
 ```
 
 ```javascript

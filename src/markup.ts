@@ -104,32 +104,6 @@ export function createChannelElements(parent: HTMLElement, config: PeakMeterConf
   return channelDivs;
 }
 
-export function createPeakLabels(parents: HTMLElement[], config: PeakMeterConfig): Array<HTMLElement> {
-  const {labelColor, fontSize, vertical} = config;
-  const labelDivs = parents.map((parent) => {
-    const label = document.createElement('div');
-    // label.style.textAlign = 'center';
-    label.style.color = labelColor;
-    label.style.fontSize = `${fontSize}px`;
-    label.textContent = '-∞';
-    if (vertical) {
-      label.style.height = `${fontSize * verticalLabelHeight}px`;
-      label.style.width = '100%';
-      label.style.textAlign = 'center';
-    } else {
-      // label.style.height = '100%';
-      label.style.width = `${fontSize * horizontalLabelWidth}px`;
-      // label.style.transform = `translateY(calc(50% - ${fontSize / 2}px))`;
-      label.style.display = 'flex';
-      label.style.justifyContent = 'center';
-      label.style.alignItems = 'center';
-    }
-    parent.appendChild(label);
-    return label;
-  });
-  return labelDivs;
-}
-
 export function createBars(parents: HTMLElement[], config: PeakMeterConfig): Array<HTMLElement> {
   const {gradient, vertical, fontSize, maskTransition} = config;
   // const initialClipPath = audioClipPath(dbRange, dbRange, vertical);

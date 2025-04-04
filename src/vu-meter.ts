@@ -1,5 +1,5 @@
 import {defaultConfig, PeakMeterConfig} from './config';
-import {audioClipPath, createBars, createChannelElements, createContainerDiv, createPeakLabels, createTicks} from './markup';
+import {audioClipPath, createBars, createChannelElements, createContainerDiv, createTicks} from './markup';
 import {dbFromFloat} from './utils';
 import {Observable, Subject, takeUntil} from 'rxjs';
 import {AudioPeakProcessorMessageEvent, Peaks} from './types';
@@ -13,7 +13,6 @@ export class VuMeter implements VuMeterApi {
   ticks?: Array<HTMLElement>;
   channelElements?: Array<HTMLElement>;
   bars?: Array<HTMLElement>;
-  peakLabels?: Array<HTMLElement>;
   tempPeaks: Array<number>;
   heldPeaks: Array<number>;
   peakHoldTimeouts: Array<number>;
@@ -40,7 +39,6 @@ export class VuMeter implements VuMeterApi {
     if (ele) {
       this.parent = createContainerDiv(ele, this.config);
       this.channelElements = createChannelElements(this.parent, this.config, this.channelCount);
-      this.peakLabels = createPeakLabels(this.channelElements, this.config);
       this.bars = createBars(this.channelElements, this.config);
       this.ticks = createTicks(this.parent, this.config);
       this.parent.addEventListener('click', this.clearPeaks.bind(this));
@@ -100,22 +98,12 @@ export class VuMeter implements VuMeterApi {
   }
 
   private paintMeter() {
-    const {dbRangeMin, dbRangeMax, vertical, scaleOffset} = this.config;
+    const {dbRangeMin, dbRangeMax, vertical} = this.config;
     if (this.bars) {
       this.bars.forEach((barDiv, i) => {
         const tempPeak = dbFromFloat(this.tempPeaks[i]);
         const clipPath = audioClipPath(tempPeak, dbRangeMin, dbRangeMax, vertical);
         barDiv.style.clipPath = clipPath;
-      });
-    }
-    if (this.peakLabels) {
-      this.peakLabels.forEach((textLabel, i) => {
-        if (this.heldPeaks[i] === 0.0) {
-          textLabel.textContent = '-∞';
-        } else {
-          const heldPeak = dbFromFloat(this.heldPeaks[i]) + scaleOffset!;
-          textLabel.textContent = heldPeak.toFixed(1);
-        }
       });
     }
     this.animationRequestId = window.requestAnimationFrame(this.paintMeter.bind(this));

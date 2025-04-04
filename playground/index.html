@@ -21,15 +21,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!--  omakase player styles -->
-  <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@byomakase/omakase-player@latest/dist/style.css" />-->
-  <link rel="stylesheet" href="http://127.0.0.1:8080/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@byomakase/omakase-player@0.15.0-SNAPSHOT.1740394365/dist/style.css" />
 
   <!--  hls.js-->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
   <!--  omakase player -->
-  <!--  <script src="https://cdn.jsdelivr.net/npm/@byomakase/omakase-player@latest/dist/omakase-player.umd.min.js"></script>-->
-  <script src="http://127.0.0.1:8080/omakase-player.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@byomakase/omakase-player@0.15.0-SNAPSHOT.1740394365/dist/omakase-player.umd.min.js"></script>
 
 
   <!-- CSS only -->
@@ -39,17 +37,9 @@
       body {
           margin: 0;
           padding: 0;
-          background-color: #ffffff;
-      }
-
-      #omakase-player {
-          width: 400px;
-          height: 400px;
-      }
-
-      #vu-meter1, #vu-meter2, #vu-meter3 {
-          width: 400px;
-          height: 200px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
       }
   </style>
 
@@ -61,9 +51,9 @@
 <div id="omakase-player"></div>
 
 <div style="display: flex; flex-direction: row">
-  <div id="vu-meter1"></div>
-  <div id="vu-meter2"></div>
-  <div id="vu-meter3"></div>
+  <div id="vu-meter1" style="width: 300px; height: 300px"></div>
+  <div id="vu-meter2" style="width: 300px; height: 300px"></div>
+  <div id="vu-meter3" style="width: 300px; height: 300px"></div>
 </div>
 
 </body>
